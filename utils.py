@@ -1,5 +1,6 @@
 from pptx.enum.dml import MSO_COLOR_TYPE, MSO_FILL
 from pptx.dml.color import RGBColor
+from pptx.dml.color import ColorFormat
 from pptx.enum.dml import MSO_THEME_COLOR
 from pptx.enum.dml import MSO_COLOR_TYPE
 from pptx.enum.shapes import MSO_SHAPE
@@ -8,36 +9,6 @@ from pptx.util import Inches
 from pptx.oxml import parse_xml
 from pptx.oxml.ns import nsdecls
 from copy import deepcopy
-
-def read_outline_color(shape):
-    line_fill = shape.line.fill
-    print("fill-type == %s" % line_fill.type)
-    # ---we only handle solid, which is most common
-    # ---the other common value is "background" which means no-fill
-    if line_fill.type != MSO_FILL.SOLID:
-        return
-
-    # ---color can be specified as specific RGB color or a theme color
-    # ---like ACCENT_1
-    line_color = line_fill.fore_color
-    print("color-type == %s" % line_color.type)
-    if line_color.type == MSO_COLOR_TYPE.SCHEME:
-        print("color == %s" % line_color.theme_color)
-    elif line_color.type == MSO_COLOR_TYPE.RGB:
-        print("color == %s" % line_color.rgb)
-    else:
-        print("No line color")
-
-def read_font_color(font):
-    # font = shape.text_frame.paragraphs[0].runs[0].font
-    font_color = font.color
-    print("color-type == %s" % font_color.type)
-    if font_color.type == MSO_COLOR_TYPE.SCHEME:
-        print("color == %s" % font_color.theme_color)
-    elif font_color.type == MSO_COLOR_TYPE.RGB:
-        print("color == %s" % font_color.rgb)
-    else:
-        print("No font color")
 
 def hex_to_rgb(hex_color):
     '''
@@ -81,14 +52,14 @@ def change_color(object_color,NewThemeColor):
         return NewThemeColor['myACCENT_6']
     elif object_color.theme_color == MSO_THEME_COLOR.DARK_1:
         return NewThemeColor['myDARK_1']
-    elif object_color.theme_color == MSO_THEME_COLOR.BACKGROUND_1 or object_color.theme_color == MSO_THEME_COLOR.TEXT_1:
+    elif object_color.theme_color == MSO_THEME_COLOR.LIGHT_1:
         return NewThemeColor['myLIGHT_1']
     elif object_color.theme_color == MSO_THEME_COLOR.DARK_2:
         return NewThemeColor['myDARK_2']
-    elif object_color.theme_color == MSO_THEME_COLOR.BACKGROUND_2 or object_color.theme_color == MSO_THEME_COLOR.TEXT_2:
+    elif object_color.theme_color == MSO_THEME_COLOR.LIGHT_2:
         return NewThemeColor['myLIGHT_2']
     else:
-        return NewThemeColor['DEFAULT']
+        return NewThemeColor['myDARK_1']
     
 def set_color_by_type(object_color,NewThemeColor):
     '''
@@ -105,9 +76,6 @@ def set_fill_solid_color(fill,NewThemeColor):
     fill.solid()
     fill_color = fill.fore_color
     set_color_by_type(fill_color,NewThemeColor)       
-
-def set_fill_gradient_color(fill,NewThemeColor):
-    fill.gradient()
 
 def change_all_font_color(slide,NewThemeColor):
     '''
@@ -135,6 +103,7 @@ def change_all_font_color(slide,NewThemeColor):
                 for run in paragraph.runs:
                     font = run.font
                     font_color = font.color
+                    print(font_color.type,run.text)
                     set_color_by_type(font_color,NewThemeColor)
 
     # only operate on group shapes
@@ -149,6 +118,7 @@ def change_all_font_color(slide,NewThemeColor):
                     for run in paragraph.runs:
                         font = run.font
                         font_color = font.color
+                        # print(font_color.type,run.text)
                         set_color_by_type(font_color,NewThemeColor)
 
 def change_background_color(slide,NewThemeColor,isGradient=False):
@@ -159,20 +129,22 @@ def change_background_color(slide,NewThemeColor,isGradient=False):
     fill = background.fill
     fill.solid()
     fill_color = fill.fore_color
+    
     if isGradient:
-        set_fill_gradient_color(fill,5,0)
+        set_fill_gradient_color(fill,2,90)
     else:
         set_color_by_type(fill_color,NewThemeColor)
 
 def change_fill_color(slide,NewThemeColor,isGradient=False):
     '''
-    change fill color of each shape
+    change fill color of each shape (not including picture)
     '''
     for shape in slide.shapes:
-        if shape.shape_type == MSO_SHAPE_TYPE.AUTO_SHAPE:
-            fill = shape.fill
+        # print(shape.shape_type)
+        fill = shape.fill
+        if fill.type == MSO_FILL.SOLID:
             if isGradient:
-                set_fill_gradient_color(fill,5,0)
+                set_fill_gradient_color(fill,2,90)
             else:
                 set_fill_solid_color(fill,NewThemeColor)
 
@@ -183,10 +155,11 @@ def change_fill_color(slide,NewThemeColor,isGradient=False):
     
     for group_shape in group_shapes:
         for shape in group_shape.shapes:
-            if shape.shape_type == MSO_SHAPE_TYPE.AUTO_SHAPE:
-                fill = shape.fill
+            fill = shape.fill
+            if fill.type != MSO_FILL.PICTURE:
+                print(fill.type)
                 if isGradient:
-                    set_fill_gradient_color(fill,5,0)
+                    set_fill_gradient_color(fill,2,90)
                 else:
                     set_fill_solid_color(fill,NewThemeColor)
 
@@ -227,7 +200,7 @@ def change_outline_color(slide,NewThemeColor):
     change outline color of each shape
     '''
     for shape in slide.shapes:
-        if shape.shape_type == MSO_SHAPE_TYPE.AUTO_SHAPE:
+        if shape.shape_type == MSO_SHAPE_TYPE.FREEFORM:
             line = shape.line
             line_color = line.color
             set_color_by_type(line_color,NewThemeColor)
@@ -239,7 +212,38 @@ def change_outline_color(slide,NewThemeColor):
     
     for group_shape in group_shapes:
         for shape in group_shape.shapes:
-            if shape.shape_type == MSO_SHAPE_TYPE.AUTO_SHAPE:
+            if shape.shape_type == MSO_SHAPE_TYPE.FREEFORM:
                 line = shape.line
                 line_color = line.color
                 set_color_by_type(line_color,NewThemeColor)
+
+def read_outline_color(shape):
+    '''
+    read outline color of shape
+    '''
+    line_fill = shape.line.fill
+    print("fill-type == %s" % line_fill.type)
+    if line_fill.type != MSO_FILL.SOLID:
+        return
+
+    line_color = line_fill.fore_color
+    print("color-type == %s" % line_color.type)
+    if line_color.type == MSO_COLOR_TYPE.SCHEME:
+        print("color == %s" % line_color.theme_color)
+    elif line_color.type == MSO_COLOR_TYPE.RGB:
+        print("color == %s" % line_color.rgb)
+    else:
+        print("No line color")
+
+def read_font_color(font):
+    '''
+    read font color of font
+    '''
+    font_color = font.color
+    print("color-type == %s" % font_color.type)
+    if font_color.type == MSO_COLOR_TYPE.SCHEME:
+        print("color == %s" % font_color.theme_color)
+    elif font_color.type == MSO_COLOR_TYPE.RGB:
+        print("color == %s" % font_color.rgb)
+    else:
+        print("No font color")                
