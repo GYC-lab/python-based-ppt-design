@@ -103,7 +103,7 @@ def change_all_font_color(slide,NewThemeColor):
                 for run in paragraph.runs:
                     font = run.font
                     font_color = font.color
-                    print(font_color.type,run.text)
+                    # print(font_color.type,run.text)
                     set_color_by_type(font_color,NewThemeColor)
 
     # only operate on group shapes
@@ -130,10 +130,15 @@ def change_background_color(slide,NewThemeColor,isGradient=False):
     fill.solid()
     fill_color = fill.fore_color
     
-    if isGradient:
-        set_fill_gradient_color(fill,2,90)
-    else:
-        set_color_by_type(fill_color,NewThemeColor)
+    # if isGradient:
+    #     set_fill_gradient_color(fill,NewThemeColor,2,90)
+    # else:
+    #     set_color_by_type(fill_color,NewThemeColor)
+    if fill.type == MSO_FILL.SOLID:
+        if isGradient:
+            set_fill_gradient_color(fill,NewThemeColor,2,90)
+        else:
+            set_fill_solid_color(fill,NewThemeColor)
 
 def change_fill_color(slide,NewThemeColor,isGradient=False):
     '''
@@ -141,13 +146,17 @@ def change_fill_color(slide,NewThemeColor,isGradient=False):
     '''
     for shape in slide.shapes:
         # print(shape.shape_type)
-        fill = shape.fill
-        if fill.type == MSO_FILL.SOLID:
-            if isGradient:
-                set_fill_gradient_color(fill,2,90)
-            else:
-                set_fill_solid_color(fill,NewThemeColor)
-
+        # print("---")
+        if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
+            fill = shape.fill
+            # change SOLID color
+            # print(fill.type)
+            if fill.type in [MSO_FILL.SOLID]:
+                if isGradient:
+                    set_fill_gradient_color(fill,NewThemeColor,2,90)
+                else:
+                    set_fill_solid_color(fill,NewThemeColor)
+        
     group_shapes = [
         shp for shp in slide.shapes
         if shp.shape_type == MSO_SHAPE_TYPE.GROUP
@@ -155,13 +164,14 @@ def change_fill_color(slide,NewThemeColor,isGradient=False):
     
     for group_shape in group_shapes:
         for shape in group_shape.shapes:
-            fill = shape.fill
-            if fill.type != MSO_FILL.PICTURE:
-                print(fill.type)
-                if isGradient:
-                    set_fill_gradient_color(fill,2,90)
-                else:
-                    set_fill_solid_color(fill,NewThemeColor)
+            if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
+                fill = shape.fill
+                if fill.type in [MSO_FILL.SOLID]:
+                    # print(fill.type)
+                    if isGradient:
+                        set_fill_gradient_color(fill,NewThemeColor,2,90)
+                    else:
+                        set_fill_solid_color(fill,NewThemeColor)
 
 def add_new_gradient_stop(fill):
     '''
@@ -173,7 +183,7 @@ def add_new_gradient_stop(fill):
     new_gradient_stop = fill.gradient_stops[-1]
     return new_gradient_stop
 
-def set_fill_gradient_color(fill,num_colors,angle):
+def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle):
     '''
     fill      : fill object of shape
     num_colors: number of gradient stops
@@ -183,8 +193,9 @@ def set_fill_gradient_color(fill,num_colors,angle):
     num_of_gradient_stops = num_colors
 
     addition_color = [RGBColor(255, 128, 128),RGBColor(255, 128, 255),RGBColor(128, 255, 255)]
-    fill.gradient_stops[0].color.rgb = RGBColor(255, 0, 0)  
-    fill.gradient_stops[1].color.rgb = RGBColor(0, 255,0 )  # 
+    
+    fill.gradient_stops[0].color.rgb = NewThemeColor['myLIGHT_1']  
+    fill.gradient_stops[1].color.rgb = NewThemeColor['myACCENT_1']
 
     for i in range(2,num_of_gradient_stops):
         new_gradient_stop = add_new_gradient_stop(fill)
@@ -200,7 +211,7 @@ def change_outline_color(slide,NewThemeColor):
     change outline color of each shape
     '''
     for shape in slide.shapes:
-        if shape.shape_type == MSO_SHAPE_TYPE.FREEFORM:
+        if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
             line = shape.line
             line_color = line.color
             set_color_by_type(line_color,NewThemeColor)
@@ -212,7 +223,7 @@ def change_outline_color(slide,NewThemeColor):
     
     for group_shape in group_shapes:
         for shape in group_shape.shapes:
-            if shape.shape_type == MSO_SHAPE_TYPE.FREEFORM:
+            if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
                 line = shape.line
                 line_color = line.color
                 set_color_by_type(line_color,NewThemeColor)

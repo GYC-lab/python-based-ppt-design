@@ -49,19 +49,19 @@ else:
 
 NewThemeColor = set_my_theme_color(myThemeColor)
 
-# prs = Presentation('motiongo科技1_sub.pptx')
-prs = Presentation('motiongo科技1_sub3.pptx')
 # prs = Presentation('motiongo科技1.pptx')
+prs = Presentation('motiongo科技1.pptx')
 prs = Presentation('motiongo科技1_sub4.pptx')
+prs = Presentation('motiongo科技1_sub5.pptx')
+prs = Presentation('motiongo科技1_sub3.pptx')
 
 for slide in prs.slides:
 
     isGradient = True
     change_all_font_color  (slide,NewThemeColor)
-    change_outline_color   (slide,NewThemeColor)
+    # change_outline_color   (slide,NewThemeColor)
     change_background_color(slide,NewThemeColor,isGradient)
     change_fill_color      (slide,NewThemeColor,isGradient)
-
 
 # Save the presentation
 prs.save('motiongo科技1_sub2_new.pptx')
