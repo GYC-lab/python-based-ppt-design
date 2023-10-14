@@ -1,8 +1,13 @@
 from pptx.enum.dml import MSO_COLOR_TYPE, MSO_FILL
-from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.dml import MSO_THEME_COLOR
 from pptx.enum.dml import MSO_COLOR_TYPE
+from pptx.enum.shapes import MSO_SHAPE
+from pptx.enum.shapes import MSO_SHAPE_TYPE
+from pptx.util import Inches
+from pptx.oxml import parse_xml
+from pptx.oxml.ns import nsdecls
+from copy import deepcopy
 
 def read_outline_color(shape):
     line_fill = shape.line.fill
@@ -85,58 +90,156 @@ def change_color(object_color,NewThemeColor):
     else:
         return NewThemeColor['DEFAULT']
     
+def set_color_by_type(object_color,NewThemeColor):
+    '''
+    set color according to type of object_color
+    '''
+    if object_color.type == MSO_COLOR_TYPE.SCHEME:
+        object_color.rgb = change_color(object_color,NewThemeColor)
+    elif object_color.type == MSO_COLOR_TYPE.RGB:
+        object_color.rgb = change_color(object_color,NewThemeColor)
+    else:
+        object_color.rgb = NewThemeColor['DEFAULT']     # set Nonecolor type
+
+def set_fill_solid_color(fill,NewThemeColor):
+    fill.solid()
+    fill_color = fill.fore_color
+    set_color_by_type(fill_color,NewThemeColor)       
+
+def set_fill_gradient_color(fill,NewThemeColor):
+    fill.gradient()
+
 def change_all_font_color(slide,NewThemeColor):
     '''
     change all font color of each slide
     '''
+    
+    # check if title exists and change font color
+    title = slide.shapes.title
+    if title is not None:
+        print(title.text)
+        title_color = title.text_frame.paragraphs[0].font.color
+        set_color_by_type(title_color,NewThemeColor)
+    
+    # check if subtitle exists and change font color
+    num_of_placeholders = slide.placeholders.__len__()
+    for i in range(1,num_of_placeholders):
+        subtitle = slide.placeholders[i]
+        subtitle_color = subtitle.text_frame.paragraphs[0].font.color
+        set_color_by_type(subtitle_color,NewThemeColor)
+
+    # change font color of each shape
     for shape in slide.shapes:
         if shape.has_text_frame:
             for paragraph in shape.text_frame.paragraphs:
                 for run in paragraph.runs:
                     font = run.font
                     font_color = font.color
-                    if font_color.type == MSO_COLOR_TYPE.SCHEME:
-                        font.color.rgb = change_color(font_color,NewThemeColor)
-                    elif font_color.type == MSO_COLOR_TYPE.RGB:
-                        print("RGB color")
-    
-def change_all_table_color(slide,NewThemeColor):
-    '''
-    change all table color of each slide
-    '''
-    for shape in slide.shapes:
-        if shape.has_table:
-            for row in shape.table.rows:
-                for cell in row.cells:
-                    for paragraph in cell.text_frame.paragraphs:
-                        for run in paragraph.runs:
-                            font = run.font
-                            font_color = font.color
-                            if font_color.type == MSO_COLOR_TYPE.SCHEME:
-                                font.color.rgb = change_color(font_color,NewThemeColor)
-                            elif font_color.type == MSO_COLOR_TYPE.RGB:
-                                pass
+                    set_color_by_type(font_color,NewThemeColor)
 
-def change_all_chart_color(slide,NewThemeColor):
-    '''
-    change all chart color of each slide
-    '''
-    for shape in slide.shapes:
-        if shape.has_chart:
-            for series in shape.chart.series:
-                for point in series.points:
-                    font = point.data_label.font
-                    font_color = font.color
-                    if font_color.type == MSO_COLOR_TYPE.SCHEME:
-                        font.color.rgb = change_color(font_color,NewThemeColor)
-                    elif font_color.type == MSO_COLOR_TYPE.RGB:
-                        pass
-                            
-def change_background_color(slide,NewThemeColor):
+    # only operate on group shapes
+    group_shapes = [
+        shp for shp in slide.shapes
+        if shp.shape_type == MSO_SHAPE_TYPE.GROUP
+    ]
+    for group_shape in group_shapes:
+        for shape in group_shape.shapes:
+            if shape.has_text_frame:
+                for paragraph in shape.text_frame.paragraphs:
+                    for run in paragraph.runs:
+                        font = run.font
+                        font_color = font.color
+                        set_color_by_type(font_color,NewThemeColor)
+
+def change_background_color(slide,NewThemeColor,isGradient=False):
     '''
     change background color of each slide
     '''
     background = slide.background
     fill = background.fill
     fill.solid()
-    fill.fore_color.rgb = change_color(fill.fore_color,NewThemeColor)
+    fill_color = fill.fore_color
+    if isGradient:
+        set_fill_gradient_color(fill,5,0)
+    else:
+        set_color_by_type(fill_color,NewThemeColor)
+
+def change_fill_color(slide,NewThemeColor,isGradient=False):
+    '''
+    change fill color of each shape
+    '''
+    for shape in slide.shapes:
+        if shape.shape_type == MSO_SHAPE_TYPE.AUTO_SHAPE:
+            fill = shape.fill
+            if isGradient:
+                set_fill_gradient_color(fill,5,0)
+            else:
+                set_fill_solid_color(fill,NewThemeColor)
+
+    group_shapes = [
+        shp for shp in slide.shapes
+        if shp.shape_type == MSO_SHAPE_TYPE.GROUP
+    ]    
+    
+    for group_shape in group_shapes:
+        for shape in group_shape.shapes:
+            if shape.shape_type == MSO_SHAPE_TYPE.AUTO_SHAPE:
+                fill = shape.fill
+                if isGradient:
+                    set_fill_gradient_color(fill,5,0)
+                else:
+                    set_fill_solid_color(fill,NewThemeColor)
+
+def add_new_gradient_stop(fill):
+    '''
+    add new gradient stop to fill
+    '''
+    gsLst = fill.gradient_stops._gsLst
+    new_gs = deepcopy(gsLst[0])
+    gsLst.append(new_gs)
+    new_gradient_stop = fill.gradient_stops[-1]
+    return new_gradient_stop
+
+def set_fill_gradient_color(fill,num_colors,angle):
+    '''
+    fill      : fill object of shape
+    num_colors: number of gradient stops
+    angle     : angle of gradient
+    '''
+    fill.gradient()
+    num_of_gradient_stops = num_colors
+
+    addition_color = [RGBColor(255, 128, 128),RGBColor(255, 128, 255),RGBColor(128, 255, 255)]
+    fill.gradient_stops[0].color.rgb = RGBColor(255, 0, 0)  
+    fill.gradient_stops[1].color.rgb = RGBColor(0, 255,0 )  # 
+
+    for i in range(2,num_of_gradient_stops):
+        new_gradient_stop = add_new_gradient_stop(fill)
+        new_gradient_stop.color.rgb = addition_color[i-2]
+
+    for i in range(0,num_of_gradient_stops):
+        fill.gradient_stops[i].position = i/(num_of_gradient_stops-1)
+
+    fill.gradient_angle = angle          
+
+def change_outline_color(slide,NewThemeColor):
+    '''
+    change outline color of each shape
+    '''
+    for shape in slide.shapes:
+        if shape.shape_type == MSO_SHAPE_TYPE.AUTO_SHAPE:
+            line = shape.line
+            line_color = line.color
+            set_color_by_type(line_color,NewThemeColor)
+
+    group_shapes = [
+        shp for shp in slide.shapes
+        if shp.shape_type == MSO_SHAPE_TYPE.GROUP
+    ]    
+    
+    for group_shape in group_shapes:
+        for shape in group_shape.shapes:
+            if shape.shape_type == MSO_SHAPE_TYPE.AUTO_SHAPE:
+                line = shape.line
+                line_color = line.color
+                set_color_by_type(line_color,NewThemeColor)

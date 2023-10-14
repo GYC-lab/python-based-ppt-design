@@ -1,12 +1,13 @@
-from utils import *
+# 定义一个类
+class MyClass:
+    def __init__(self):
+        self.my_attribute = 42
 
-hex_color = "#FF00FF"
+# 创建对象
+obj = MyClass()
 
-rgb_color = hex_to_rgb(hex_color)
-# print(rgb_color)
-
-# 着色1#00BCA7  着色2#6BFFB8  着色3#2CEAA3  着色4#AAEFDF  着色5#9EE37D  着色6#63C132
-
-hex_color = "#00BCA7"
-rgb_color = hex_to_rgb(hex_color)
-print(rgb_color)
+# 使用 hasattr 检查对象是否包含某个属性
+if hasattr(obj, 'my_attribute'):
+    print("对象包含 my_attribute 属性")
+else:
+    print("对象不包含 my_attribute 属性")
