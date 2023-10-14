@@ -8,6 +8,7 @@ from pptx.enum.shapes import MSO_SHAPE_TYPE
 from pptx.util import Inches
 from pptx.oxml import parse_xml
 from pptx.oxml.ns import nsdecls
+from pptx.oxml.xmlchemy import OxmlElement
 from copy import deepcopy
 
 def hex_to_rgb(hex_color):
@@ -72,10 +73,35 @@ def set_color_by_type(object_color,NewThemeColor):
     else:
         object_color.rgb = NewThemeColor['DEFAULT']     # set Nonecolor type
 
-def set_fill_solid_color(fill,NewThemeColor):
+def SubElement(parent, tagname, **kwargs):
+        element = OxmlElement(tagname)
+        element.attrib.update(kwargs)
+        parent.append(element)
+        return element
+
+def set_solid_transparency(fill, alpha):
+    """ Set the transparency (alpha) of a solid fill"""
+    realAlpha = (100-int(alpha*100))*1000
+    ts = fill._xPr
+    with open('xml.xml', 'a') as f:
+        f.write(ts.xml)    
+    ts = fill._xPr.solidFill
+    sF = ts.get_or_change_to_srgbClr()
+    sE = SubElement(sF, 'a:alpha', val=str(realAlpha))
+
+def set_gradient_transparency(fill, alpha, stop_i):
+    """ Set the transparency (alpha) of a gradient fill"""
+    realAlpha = (100-int(alpha*100))*1000
+
+    ts = fill._xPr.gradFill.gsLst[stop_i]
+    sF = ts.get_or_change_to_srgbClr()
+    sE = SubElement(sF, 'a:alpha', val=str(realAlpha))
+
+def set_fill_solid_color(fill,NewThemeColor,alpha=1):
     fill.solid()
     fill_color = fill.fore_color
-    set_color_by_type(fill_color,NewThemeColor)       
+    set_color_by_type(fill_color,NewThemeColor) # set color
+    set_solid_transparency(fill, alpha)         # set transparency
 
 def change_all_font_color(slide,NewThemeColor):
     '''
@@ -85,7 +111,7 @@ def change_all_font_color(slide,NewThemeColor):
     # check if title exists and change font color
     title = slide.shapes.title
     if title is not None:
-        print(title.text)
+        # print(title.text)
         title_color = title.text_frame.paragraphs[0].font.color
         set_color_by_type(title_color,NewThemeColor)
     
@@ -126,15 +152,14 @@ def change_background_color(slide,NewThemeColor,isGradient=False):
     change background color of each slide
     '''
     background = slide.background
-    fill = background.fill
-    fill.solid()
-    fill_color = fill.fore_color
-    
+    fill       = background.fill
+
     # if isGradient:
     #     set_fill_gradient_color(fill,NewThemeColor,2,90)
     # else:
     #     set_color_by_type(fill_color,NewThemeColor)
-    if fill.type == MSO_FILL.SOLID:
+    if fill.type in [MSO_FILL.SOLID,MSO_FILL.BACKGROUND]:
+        fill.solid()
         if isGradient:
             set_fill_gradient_color(fill,NewThemeColor,2,90)
         else:
@@ -151,7 +176,7 @@ def change_fill_color(slide,NewThemeColor,isGradient=False):
             fill = shape.fill
             # change SOLID color
             # print(fill.type)
-            if fill.type in [MSO_FILL.SOLID]:
+            if fill.type in [MSO_FILL.SOLID,MSO_FILL.BACKGROUND,MSO_FILL.GRADIENT]:
                 if isGradient:
                     set_fill_gradient_color(fill,NewThemeColor,2,90)
                 else:
@@ -166,7 +191,7 @@ def change_fill_color(slide,NewThemeColor,isGradient=False):
         for shape in group_shape.shapes:
             if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
                 fill = shape.fill
-                if fill.type in [MSO_FILL.SOLID]:
+                if fill.type in [MSO_FILL.SOLID,MSO_FILL.BACKGROUND,MSO_FILL.GRADIENT]:
                     # print(fill.type)
                     if isGradient:
                         set_fill_gradient_color(fill,NewThemeColor,2,90)
@@ -183,15 +208,15 @@ def add_new_gradient_stop(fill):
     new_gradient_stop = fill.gradient_stops[-1]
     return new_gradient_stop
 
-def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle):
+def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=0.01):
     '''
     fill      : fill object of shape
     num_colors: number of gradient stops
     angle     : angle of gradient
     '''
     fill.gradient()
+    
     num_of_gradient_stops = num_colors
-
     addition_color = [RGBColor(255, 128, 128),RGBColor(255, 128, 255),RGBColor(128, 255, 255)]
     
     fill.gradient_stops[0].color.rgb = NewThemeColor['myLIGHT_1']  
@@ -203,8 +228,10 @@ def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle):
 
     for i in range(0,num_of_gradient_stops):
         fill.gradient_stops[i].position = i/(num_of_gradient_stops-1)
+        set_gradient_transparency(fill, alpha, i)   # set transparency
 
     fill.gradient_angle = angle          
+    
 
 def change_outline_color(slide,NewThemeColor):
     '''

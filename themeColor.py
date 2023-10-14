@@ -9,7 +9,7 @@ myThemeColor_user = {
     'myLIGHT_1' : '#EEFFFD',
     'myDARK_2'  : '#FFFFFF',
     'myLIGHT_2' : '#FDFFFF',
-    'DEFAULT'   : '#000000'
+    'DEFAULT'   : '#00BCA7'
 }
 
 myThemeColor_white = {
