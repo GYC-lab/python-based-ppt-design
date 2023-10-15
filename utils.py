@@ -78,7 +78,7 @@ def change_color(object_color,NewThemeColor):
     elif object_color.theme_color == MSO_THEME_COLOR.LIGHT_2:
         return NewThemeColor['myLIGHT_2']
     else:
-        return NewThemeColor['myDARK_1']
+        return NewThemeColor['DEFAULT']
     
 def add_new_gradient_stop(fill):
     '''
@@ -102,7 +102,11 @@ def set_color_by_type(object_color,NewThemeColor):
         object_color.rgb = NewThemeColor['DEFAULT']     # set Nonecolor type
 
 def set_solid_transparency(fill, alpha):
-    """ Set the transparency (alpha) of a solid fill"""
+    """ 
+    Set the transparency (alpha) of a solid fill
+    alpha = 0: not transparent
+    alpha = 1: transparent
+    """
     realAlpha = (100-int(alpha*100))*1000
     ts = fill._xPr
     # with open('xml.xml', 'a') as f:
@@ -128,18 +132,18 @@ def set_gradient_transparency(fill, alpha, stop_i):
     sF = ts.get_or_change_to_srgbClr()
     sE = SubElement(sF, 'a:alpha', val=str(realAlpha))
 
-def set_fill_solid_color(fill,NewThemeColor,alpha=1):
+def set_fill_solid_color(fill,NewThemeColor,alpha=0):
     '''
     fill         : fill object of shape
     NewThemeColor: user-defined theme color
-    alpha        : transparency
+    alpha        : transparency, 0: not transparent; 1: transparent
     '''
     fill.solid()
     fill_color = fill.fore_color
     set_color_by_type(fill_color,NewThemeColor) # set color
     set_solid_transparency(fill, alpha)         # set transparency
 
-def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=1):
+def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=0):
     '''
     fill      : fill object of shape
     num_colors: number of gradient stops
@@ -163,7 +167,6 @@ def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=1):
     
     # set gradient angle
     set_gradient_angle(fill, angle)
-    print("set gradient angle to %d" % angle)
 
     # try:
     #     fill.gradient_angle = angle 
