@@ -20,7 +20,8 @@ pip install -r requirement.txt
 
 # 基本功能
 
-1. 根据自定义的主题颜色修改字体颜色、形状填充颜色、形状轮廓颜色
+1. 根据自定义的主题颜色修改字体颜色、形状填充颜色、形状轮廓颜色，具体实现方式见`utils.py`文件中的`change_color`函数，是通过if-else判断语句实现的。
+目前python的pptx库无法直接修改ppt中的主题颜色，pptx库的作者推荐用自己的模板来改（见这个帖子：https://stackoverflow.com/questions/57482998/set-theme-with-python-pptx）
 2. 填充颜色可选择纯色和渐变色，其中渐变色可设置两种以上的颜色
 3. 可修改填充颜色的透明度，通过`alpha`参数设置，取值范围为`[0, 1]`
 4. 可选择是否修改所有幻灯片或者只修改选中的幻灯片
