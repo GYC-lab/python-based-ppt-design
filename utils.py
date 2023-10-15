@@ -77,9 +77,15 @@ def change_color(object_color,NewThemeColor):
         return NewThemeColor['myDARK_2']
     elif object_color.theme_color == MSO_THEME_COLOR.LIGHT_2:
         return NewThemeColor['myLIGHT_2']
-    else:
-        return NewThemeColor['DEFAULT']
-    
+    elif object_color.theme_color == MSO_THEME_COLOR.BACKGROUND_1:
+        return NewThemeColor['myDARK_1']
+    elif object_color.theme_color == MSO_THEME_COLOR.BACKGROUND_2:
+        return NewThemeColor['myLIGHT_1']
+    elif object_color.theme_color == MSO_THEME_COLOR.TEXT_1:
+        return NewThemeColor['myDARK_1']
+    elif object_color.theme_color == MSO_THEME_COLOR.TEXT_2:
+        return NewThemeColor['myLIGHT_1']
+
 def add_new_gradient_stop(fill):
     '''
     add new gradient stop to fill
@@ -90,16 +96,38 @@ def add_new_gradient_stop(fill):
     new_gradient_stop = fill.gradient_stops[-1]
     return new_gradient_stop
     
-def set_color_by_type(object_color,NewThemeColor):
+def set_color_by_type1(object_color,NewThemeColor):
     '''
-    set color according to type of object_color
+    set color according to type of object_color for font
     '''
+    # print(object_color.type)    
     if object_color.type == MSO_COLOR_TYPE.SCHEME:
         object_color.rgb = change_color(object_color,NewThemeColor)
-    elif object_color.type == MSO_COLOR_TYPE.RGB:
-        object_color.rgb = change_color(object_color,NewThemeColor)
+    # not theme color
     else:
-        object_color.rgb = NewThemeColor['DEFAULT']     # set Nonecolor type
+        object_color.rgb = NewThemeColor['DEFAULT1']  # set black color for font  
+
+def set_color_by_type2(object_color,NewThemeColor):
+    '''
+    set color according to type of object_color for shape
+    '''
+    # print(object_color.type)    
+    if object_color.type == MSO_COLOR_TYPE.SCHEME:
+        object_color.rgb = change_color(object_color,NewThemeColor)
+    # not theme color
+    else:
+        object_color.rgb = NewThemeColor['DEFAULT2'] 
+
+def set_color_by_type3(object_color,NewThemeColor):
+    '''
+    set color according to type of object_color for background
+    '''
+    # print(object_color.type)    
+    if object_color.type == MSO_COLOR_TYPE.SCHEME:
+        object_color.rgb = change_color(object_color,NewThemeColor)
+    # not theme color
+    else:
+        object_color.rgb = NewThemeColor['DEFAULT3'] 
 
 def set_solid_transparency(fill, alpha):
     """ 
@@ -140,7 +168,20 @@ def set_fill_solid_color(fill,NewThemeColor,alpha=0):
     '''
     fill.solid()
     fill_color = fill.fore_color
-    set_color_by_type(fill_color,NewThemeColor) # set color
+    # print(fill_color.type)
+    set_color_by_type2(fill_color,NewThemeColor) # set color
+    set_solid_transparency(fill, alpha)         # set transparency
+
+def set_background_solid_color(fill,NewThemeColor,alpha=0):
+    '''
+    fill         : fill object of shape
+    NewThemeColor: user-defined theme color
+    alpha        : transparency, 0: not transparent; 1: transparent
+    '''
+    fill.solid()
+    fill_color = fill.fore_color
+    # print(fill_color.type)
+    set_color_by_type3(fill_color,NewThemeColor) # set color
     set_solid_transparency(fill, alpha)         # set transparency
 
 def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=0):
@@ -155,7 +196,7 @@ def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=0):
     addition_color = [RGBColor(255, 128, 128),RGBColor(255, 128, 255),RGBColor(128, 255, 255)]
     
     fill.gradient_stops[0].color.rgb = NewThemeColor['myLIGHT_1']  
-    fill.gradient_stops[1].color.rgb = NewThemeColor['myACCENT_1']
+    fill.gradient_stops[1].color.rgb = NewThemeColor['myDARK_1']
 
     for i in range(2,num_of_gradient_stops):
         new_gradient_stop = add_new_gradient_stop(fill)

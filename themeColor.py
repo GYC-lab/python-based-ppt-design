@@ -8,10 +8,12 @@ myThemeColor_user = {
     'myACCENT_5': '#9EE37D',
     'myACCENT_6': '#63C132',
     'myDARK_1'  : '#00584E',
-    'myLIGHT_1' : '#EEFFFD',
+    'myLIGHT_1' : '#FFFFFF',
     'myDARK_2'  : '#FFFFFF',
     'myLIGHT_2' : '#FDFFFF',
-    'DEFAULT'   : '#000000'
+    'DEFAULT1'  : '#FFFFFF',
+    'DEFAULT2'  : '#00584E',
+    'DEFAULT3'  : '#9654c7',
 }
 
 myThemeColor_white = {
@@ -25,7 +27,8 @@ myThemeColor_white = {
     'myLIGHT_1' : '#FFFFFF',
     'myDARK_2'  : '#FFFFFF',
     'myLIGHT_2' : '#FFFFFF',
-    'DEFAULT'   : '#FFFFFF'
+    'DEFAULT1'  : '#FFFFFF',
+    'DEFAULT2'  : '#FFFFFF'    
 }
 
 myThemeColor_black = {
@@ -39,5 +42,6 @@ myThemeColor_black = {
     'myLIGHT_1' : '#000000',
     'myDARK_2'  : '#000000',
     'myLIGHT_2' : '#000000',
-    'DEFAULT'   : '#000000'
+    'DEFAULT1'  : '#000000',
+    'DEFAULT2'  : '#000000'  
 }

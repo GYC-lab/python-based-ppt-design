@@ -16,15 +16,17 @@ def change_background_color(slide,NewThemeColor,
         #     # print(fill.type)
         # change SOLID color
         if fill.type == MSO_FILL.SOLID:
-            set_fill_solid_color(fill,NewThemeColor,_transparency)
+            set_background_solid_color(fill,NewThemeColor,_transparency)
         # change GRADIENT color
         elif fill.type == MSO_FILL.GRADIENT:
             set_fill_gradient_color(fill,NewThemeColor,2,_gradient_angle)
         # change BACKGROUND color
         elif fill.type == MSO_FILL.BACKGROUND:
-            set_fill_solid_color(fill,NewThemeColor,_transparency)
+            set_background_solid_color(fill,NewThemeColor,_transparency)
         # set Nonecolor type to transparent
         else:
-            set_fill_solid_color(fill,NewThemeColor,1)
+            set_fill_solid_color(fill,NewThemeColor,_transparency)
+
+        
     else:
         pass

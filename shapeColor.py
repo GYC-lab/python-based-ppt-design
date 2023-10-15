@@ -9,11 +9,11 @@ def change_shape_color(slide,NewThemeColor,
     '''
     if _change_shape_color:
         for shape in slide.shapes:
+            # print(shape.shape_type)
             if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,\
                                     MSO_SHAPE_TYPE.FREEFORM,  \
                                     ]:
                 fill = shape.fill
-
                 # change SOLID color
                 if fill.type in [MSO_FILL.SOLID]:
                     set_fill_solid_color(fill,NewThemeColor,_transparency)
@@ -22,10 +22,11 @@ def change_shape_color(slide,NewThemeColor,
                     set_fill_gradient_color(fill,NewThemeColor,2,_gradient_angle)
                 # change BACKGROUND color
                 elif fill.type in [MSO_FILL.BACKGROUND]:
+                    # _transparency = 1
                     set_fill_solid_color(fill,NewThemeColor,_transparency)   
                 # set Nonecolor type to transparent
                 else:
-                    set_fill_solid_color(fill,NewThemeColor,1)
+                    set_fill_solid_color(fill,NewThemeColor,_transparency)
 
         group_shapes = [
             shp for shp in slide.shapes
@@ -49,6 +50,6 @@ def change_shape_color(slide,NewThemeColor,
                         set_fill_solid_color(fill,NewThemeColor,_transparency)
                     # set Nonecolor type to transparent
                     else:
-                        set_fill_solid_color(fill,NewThemeColor,1)                        
+                        set_fill_solid_color(fill,NewThemeColor,_transparency)                        
     else:
         pass

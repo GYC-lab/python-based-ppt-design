@@ -23,14 +23,14 @@ def change_font_color(slide,NewThemeColor,_change_font_color):
         if title is not None:
             # print(title.text)
             title_color = title.text_frame.paragraphs[0].font.color
-            set_color_by_type(title_color,NewThemeColor)
+            set_color_by_type1(title_color,NewThemeColor)
         
         # check if subtitle exists and change font color
         num_of_placeholders = slide.placeholders.__len__()
         for i in range(1,num_of_placeholders):
             subtitle = slide.placeholders[i]
             subtitle_color = subtitle.text_frame.paragraphs[0].font.color
-            set_color_by_type(subtitle_color,NewThemeColor)
+            set_color_by_type1(subtitle_color,NewThemeColor)
 
         # change font color of each shape
         for shape in slide.shapes:
@@ -40,7 +40,7 @@ def change_font_color(slide,NewThemeColor,_change_font_color):
                         font = run.font
                         font_color = font.color
                         # print(font_color.type,run.text)
-                        set_color_by_type(font_color,NewThemeColor)
+                        set_color_by_type1(font_color,NewThemeColor)
 
         # only operate on group shapes
         group_shapes = [
@@ -55,6 +55,6 @@ def change_font_color(slide,NewThemeColor,_change_font_color):
                             font = run.font
                             font_color = font.color
                             # print(font_color.type,run.text)
-                            set_color_by_type(font_color,NewThemeColor)
+                            set_color_by_type1(font_color,NewThemeColor)
     else:
         pass

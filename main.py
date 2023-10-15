@@ -8,7 +8,7 @@ _change_font_color       = 1 # 1: change font color; 0: not change font color
 _change_outline_color    = 0 # 1: change outline color; 0: not change outline color
 _change_background_color = 1 # 1: change background color; 0: not change background color
 _change_shape_color      = 1 # 1: change shape color; 0: not change fill color
-_gradient_angle          = 90 # angle of gradient, 90: vertical; 0: horizontal
+_gradient_angle          = 0 # angle of gradient, 90: vertical; 0: horizontal
 _transparency            = 0  # transparency of fill color, 0: not transparent; 1: transparent
 _set_single_slile        = 0 # 1: only set one slide; 0: set all slides
 slide_index              = 0 # index of slide to be set (if set_single_slile=1)
@@ -21,8 +21,8 @@ inFile          = 'motiongo科技1_sub2.pptx' # 科技对商业的影响 - 背�
 inFile          = 'motiongo科技1_sub4.pptx' # 科技发展现状大纲
 inFile          = 'motiongo科技1_sub5.pptx' # 标题页
 inFile          = 'motiongo科技1_sub3.pptx' # 科技对商业的影响 - 趋势分析
-outFile         = 'motiongo科技1_new.pptx'
 inFile          = 'motiongo科技1.pptx'      # 全部
+outFile         = 'motiongo科技1_new.pptx'
 
 # --------------------- set theme color at themeColor.py --------------------- #
 myThemeColor  = myThemeColor_user
