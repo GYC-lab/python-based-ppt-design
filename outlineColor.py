@@ -23,6 +23,7 @@ def change_outline_color(slide,NewThemeColor):
     change outline color of each shape
     '''
     for shape in slide.shapes:
+        # if shape.shape_type in [MSO_SHAPE_TYPE.FREEFORM]:
         if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
             line = shape.line
             line_color = line.color
@@ -35,6 +36,7 @@ def change_outline_color(slide,NewThemeColor):
     
     for group_shape in group_shapes:
         for shape in group_shape.shapes:
+            # if shape.shape_type in [MSO_SHAPE_TYPE.FREEFORM]:
             if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
                 line = shape.line
                 line_color = line.color

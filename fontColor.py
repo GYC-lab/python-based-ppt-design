@@ -13,7 +13,7 @@ def read_font_color(font):
     else:
         print("No font color")                
 
-def change_all_font_color(slide,NewThemeColor):
+def change_font_color(slide,NewThemeColor):
     '''
     change all font color of each slide
     '''

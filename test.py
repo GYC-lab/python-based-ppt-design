@@ -38,4 +38,4 @@ blueBoxFillColour.rgb = RGBColor(0,176,240)
 _set_shape_transparency(blueBox, 44000)
 
 # Save the presentation
-prs.save('motiongo科技1_sub2_new.pptx')
+prs.save('motiongo科技1_new.pptx')

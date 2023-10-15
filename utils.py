@@ -108,19 +108,24 @@ def set_gradient_transparency(fill, alpha, stop_i):
     sE = SubElement(sF, 'a:alpha', val=str(realAlpha))
 
 def set_fill_solid_color(fill,NewThemeColor,alpha=1):
+    '''
+    fill         : fill object of shape
+    NewThemeColor: user-defined theme color
+    alpha        : transparency
+    '''
     fill.solid()
     fill_color = fill.fore_color
     set_color_by_type(fill_color,NewThemeColor) # set color
     set_solid_transparency(fill, alpha)         # set transparency
 
-def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=0.01):
+def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=1):
     '''
     fill      : fill object of shape
     num_colors: number of gradient stops
     angle     : angle of gradient
     '''
+
     fill.gradient()
-    
     num_of_gradient_stops = num_colors
     addition_color = [RGBColor(255, 128, 128),RGBColor(255, 128, 255),RGBColor(128, 255, 255)]
     
