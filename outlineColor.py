@@ -18,26 +18,29 @@ def read_outline_color(shape):
     else:
         print("No line color")
 
-def change_outline_color(slide,NewThemeColor):
+def change_outline_color(slide,NewThemeColor,_change_outline_color):
     '''
     change outline color of each shape
     '''
-    for shape in slide.shapes:
-        # if shape.shape_type in [MSO_SHAPE_TYPE.FREEFORM]:
-        if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
-            line = shape.line
-            line_color = line.color
-            set_color_by_type(line_color,NewThemeColor)
-
-    group_shapes = [
-        shp for shp in slide.shapes
-        if shp.shape_type == MSO_SHAPE_TYPE.GROUP
-    ]    
-    
-    for group_shape in group_shapes:
-        for shape in group_shape.shapes:
+    if _change_outline_color:
+        for shape in slide.shapes:
             # if shape.shape_type in [MSO_SHAPE_TYPE.FREEFORM]:
             if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
                 line = shape.line
                 line_color = line.color
                 set_color_by_type(line_color,NewThemeColor)
+
+        group_shapes = [
+            shp for shp in slide.shapes
+            if shp.shape_type == MSO_SHAPE_TYPE.GROUP
+        ]    
+        
+        for group_shape in group_shapes:
+            for shape in group_shape.shapes:
+                # if shape.shape_type in [MSO_SHAPE_TYPE.FREEFORM]:
+                if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
+                    line = shape.line
+                    line_color = line.color
+                    set_color_by_type(line_color,NewThemeColor)
+    else:
+        pass

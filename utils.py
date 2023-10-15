@@ -145,3 +145,19 @@ def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=1):
     except:
         print("fail to set gradient angle, maybe is not a linear gradient")
     
+def report_choice(_change_font_color,_change_outline_color,_change_background_color,_change_fill_color):
+    '''
+    report choice of user
+    '''
+    print('-------------------------')
+    print('you are going to change:')
+    if _change_font_color:
+        print('- font color')
+    if _change_outline_color:
+        print('- outline color')
+    if _change_background_color:
+        print('- background color')
+    if _change_fill_color:
+        print('- fill color')
+    print('-------------------------')
+        

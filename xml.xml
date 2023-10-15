@@ -56195,3 +56195,1032 @@
     </a:solidFill>
   </a:ln>
 </p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="10709512" y="5620581"/>
+    <a:ext cx="662681" cy="964150"/>
+  </a:xfrm>
+  <a:custGeom>
+    <a:avLst/>
+    <a:gdLst>
+      <a:gd name="connsiteX0" fmla="*/ 662681 w 662681"/>
+      <a:gd name="connsiteY0" fmla="*/ 0 h 964150"/>
+      <a:gd name="connsiteX1" fmla="*/ 662681 w 662681"/>
+      <a:gd name="connsiteY1" fmla="*/ 964150 h 964150"/>
+      <a:gd name="connsiteX2" fmla="*/ 0 w 662681"/>
+      <a:gd name="connsiteY2" fmla="*/ 964150 h 964150"/>
+      <a:gd name="connsiteX3" fmla="*/ 42976 w 662681"/>
+      <a:gd name="connsiteY3" fmla="*/ 930998 h 964150"/>
+      <a:gd name="connsiteX4" fmla="*/ 648392 w 662681"/>
+      <a:gd name="connsiteY4" fmla="*/ 48603 h 964150"/>
+    </a:gdLst>
+    <a:ahLst/>
+    <a:cxnLst>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX0" y="connsiteY0"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX1" y="connsiteY1"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX2" y="connsiteY2"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX3" y="connsiteY3"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX4" y="connsiteY4"/>
+      </a:cxn>
+    </a:cxnLst>
+    <a:rect l="l" t="t" r="r" b="b"/>
+    <a:pathLst>
+      <a:path w="662681" h="964150">
+        <a:moveTo>
+          <a:pt x="662681" y="0"/>
+        </a:moveTo>
+        <a:lnTo>
+          <a:pt x="662681" y="964150"/>
+        </a:lnTo>
+        <a:lnTo>
+          <a:pt x="0" y="964150"/>
+        </a:lnTo>
+        <a:lnTo>
+          <a:pt x="42976" y="930998"/>
+        </a:lnTo>
+        <a:cubicBezTo>
+          <a:pt x="318774" y="700608"/>
+          <a:pt x="530719" y="396336"/>
+          <a:pt x="648392" y="48603"/>
+        </a:cubicBezTo>
+        <a:close/>
+      </a:path>
+    </a:pathLst>
+  </a:custGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="3114675" y="0"/>
+    <a:ext cx="12192001" cy="6858000"/>
+  </a:xfrm>
+  <a:prstGeom prst="rect">
+    <a:avLst/>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00584E"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="3490443" y="1824436"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="4608427" y="2509422"/>
+    <a:ext cx="2859396" cy="2859397"/>
+  </a:xfrm>
+  <a:prstGeom prst="ellipse">
+    <a:avLst/>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00584E"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="368300" dist="127000" dir="2400000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="40000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="5121258" y="3022253"/>
+    <a:ext cx="1833734" cy="1833735"/>
+  </a:xfrm>
+  <a:prstGeom prst="ellipse">
+    <a:avLst/>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="368300" dist="127000" dir="2400000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="40000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="2613922" y="2968722"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="2605369" y="4280982"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="3368739" y="5494131"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="6789120" y="1809104"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="7808042" y="2989238"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="7892922" y="4275087"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="6910957" y="5494131"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="10709512" y="5620581"/>
+    <a:ext cx="662681" cy="964150"/>
+  </a:xfrm>
+  <a:custGeom>
+    <a:avLst/>
+    <a:gdLst>
+      <a:gd name="connsiteX0" fmla="*/ 662681 w 662681"/>
+      <a:gd name="connsiteY0" fmla="*/ 0 h 964150"/>
+      <a:gd name="connsiteX1" fmla="*/ 662681 w 662681"/>
+      <a:gd name="connsiteY1" fmla="*/ 964150 h 964150"/>
+      <a:gd name="connsiteX2" fmla="*/ 0 w 662681"/>
+      <a:gd name="connsiteY2" fmla="*/ 964150 h 964150"/>
+      <a:gd name="connsiteX3" fmla="*/ 42976 w 662681"/>
+      <a:gd name="connsiteY3" fmla="*/ 930998 h 964150"/>
+      <a:gd name="connsiteX4" fmla="*/ 648392 w 662681"/>
+      <a:gd name="connsiteY4" fmla="*/ 48603 h 964150"/>
+    </a:gdLst>
+    <a:ahLst/>
+    <a:cxnLst>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX0" y="connsiteY0"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX1" y="connsiteY1"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX2" y="connsiteY2"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX3" y="connsiteY3"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX4" y="connsiteY4"/>
+      </a:cxn>
+    </a:cxnLst>
+    <a:rect l="l" t="t" r="r" b="b"/>
+    <a:pathLst>
+      <a:path w="662681" h="964150">
+        <a:moveTo>
+          <a:pt x="662681" y="0"/>
+        </a:moveTo>
+        <a:lnTo>
+          <a:pt x="662681" y="964150"/>
+        </a:lnTo>
+        <a:lnTo>
+          <a:pt x="0" y="964150"/>
+        </a:lnTo>
+        <a:lnTo>
+          <a:pt x="42976" y="930998"/>
+        </a:lnTo>
+        <a:cubicBezTo>
+          <a:pt x="318774" y="700608"/>
+          <a:pt x="530719" y="396336"/>
+          <a:pt x="648392" y="48603"/>
+        </a:cubicBezTo>
+        <a:close/>
+      </a:path>
+    </a:pathLst>
+  </a:custGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="3114675" y="0"/>
+    <a:ext cx="12192001" cy="6858000"/>
+  </a:xfrm>
+  <a:prstGeom prst="rect">
+    <a:avLst/>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00584E"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="3490443" y="1824436"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="4608427" y="2509422"/>
+    <a:ext cx="2859396" cy="2859397"/>
+  </a:xfrm>
+  <a:prstGeom prst="ellipse">
+    <a:avLst/>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00584E"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="368300" dist="127000" dir="2400000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="40000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="5121258" y="3022253"/>
+    <a:ext cx="1833734" cy="1833735"/>
+  </a:xfrm>
+  <a:prstGeom prst="ellipse">
+    <a:avLst/>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="368300" dist="127000" dir="2400000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="40000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="2613922" y="2968722"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="2605369" y="4280982"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="3368739" y="5494131"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="6789120" y="1809104"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="7808042" y="2989238"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="7892922" y="4275087"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="6910957" y="5494131"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="10709512" y="5620581"/>
+    <a:ext cx="662681" cy="964150"/>
+  </a:xfrm>
+  <a:custGeom>
+    <a:avLst/>
+    <a:gdLst>
+      <a:gd name="connsiteX0" fmla="*/ 662681 w 662681"/>
+      <a:gd name="connsiteY0" fmla="*/ 0 h 964150"/>
+      <a:gd name="connsiteX1" fmla="*/ 662681 w 662681"/>
+      <a:gd name="connsiteY1" fmla="*/ 964150 h 964150"/>
+      <a:gd name="connsiteX2" fmla="*/ 0 w 662681"/>
+      <a:gd name="connsiteY2" fmla="*/ 964150 h 964150"/>
+      <a:gd name="connsiteX3" fmla="*/ 42976 w 662681"/>
+      <a:gd name="connsiteY3" fmla="*/ 930998 h 964150"/>
+      <a:gd name="connsiteX4" fmla="*/ 648392 w 662681"/>
+      <a:gd name="connsiteY4" fmla="*/ 48603 h 964150"/>
+    </a:gdLst>
+    <a:ahLst/>
+    <a:cxnLst>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX0" y="connsiteY0"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX1" y="connsiteY1"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX2" y="connsiteY2"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX3" y="connsiteY3"/>
+      </a:cxn>
+      <a:cxn ang="0">
+        <a:pos x="connsiteX4" y="connsiteY4"/>
+      </a:cxn>
+    </a:cxnLst>
+    <a:rect l="l" t="t" r="r" b="b"/>
+    <a:pathLst>
+      <a:path w="662681" h="964150">
+        <a:moveTo>
+          <a:pt x="662681" y="0"/>
+        </a:moveTo>
+        <a:lnTo>
+          <a:pt x="662681" y="964150"/>
+        </a:lnTo>
+        <a:lnTo>
+          <a:pt x="0" y="964150"/>
+        </a:lnTo>
+        <a:lnTo>
+          <a:pt x="42976" y="930998"/>
+        </a:lnTo>
+        <a:cubicBezTo>
+          <a:pt x="318774" y="700608"/>
+          <a:pt x="530719" y="396336"/>
+          <a:pt x="648392" y="48603"/>
+        </a:cubicBezTo>
+        <a:close/>
+      </a:path>
+    </a:pathLst>
+  </a:custGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="3114675" y="0"/>
+    <a:ext cx="12192001" cy="6858000"/>
+  </a:xfrm>
+  <a:prstGeom prst="rect">
+    <a:avLst/>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00584E"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="3490443" y="1824436"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="4608427" y="2509422"/>
+    <a:ext cx="2859396" cy="2859397"/>
+  </a:xfrm>
+  <a:prstGeom prst="ellipse">
+    <a:avLst/>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00584E"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="368300" dist="127000" dir="2400000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="40000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="5121258" y="3022253"/>
+    <a:ext cx="1833734" cy="1833735"/>
+  </a:xfrm>
+  <a:prstGeom prst="ellipse">
+    <a:avLst/>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="368300" dist="127000" dir="2400000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="40000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="2613922" y="2968722"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="2605369" y="4280982"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="3368739" y="5494131"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="6789120" y="1809104"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="7808042" y="2989238"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="7892922" y="4275087"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
+<p:spPr xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <a:xfrm>
+    <a:off x="6910957" y="5494131"/>
+    <a:ext cx="1724527" cy="523217"/>
+  </a:xfrm>
+  <a:prstGeom prst="roundRect">
+    <a:avLst>
+      <a:gd name="adj" fmla="val 50000"/>
+    </a:avLst>
+  </a:prstGeom>
+  <a:solidFill>
+    <a:srgbClr val="00BCA7"/>
+  </a:solidFill>
+  <a:ln>
+    <a:solidFill>
+      <a:srgbClr val="00BCA7"/>
+    </a:solidFill>
+  </a:ln>
+  <a:effectLst>
+    <a:outerShdw blurRad="292100" dist="76200" dir="2700000" sx="98000" sy="98000" algn="tl" rotWithShape="0">
+      <a:schemeClr val="accent1">
+        <a:alpha val="28000"/>
+      </a:schemeClr>
+    </a:outerShdw>
+  </a:effectLst>
+</p:spPr>
