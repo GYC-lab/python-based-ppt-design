@@ -5,9 +5,9 @@ from setColor import *
 
 # --------------------------------- settings --------------------------------- #
 _change_font_color       = 1 # 1: change font color; 0: not change font color
-_change_outline_color    = 1 # 1: change outline color; 0: not change outline color
+_change_outline_color    = 0 # 1: change outline color; 0: not change outline color
 _change_background_color = 1 # 1: change background color; 0: not change background color
-_change_fill_color       = 1 # 1: change fill color; 0: not change fill color
+_change_shape_color      = 1 # 1: change shape color; 0: not change fill color
 _set_single_slile        = 0 # 1: only set one slide; 0: set all slides
 slide_index              = 0 # index of slide to be set (if set_single_slile=1)
 
@@ -23,7 +23,7 @@ inFile          = 'motiongo科技1_sub3.pptx' # 科技对商业的影响 - 趋�
 outFile         = 'motiongo科技1_new.pptx'
 
 # --------------------- set theme color at themeColor.py --------------------- #
-myThemeColor  = myThemeColor_user
+myThemeColor  = myThemeColor_black
 NewThemeColor = set_my_theme_color(myThemeColor)
 
 # --------------------------------- load ppt --------------------------------- #
@@ -31,14 +31,14 @@ prs = Presentation(input_ppt_path+inFile)   # 标题页
 print('loading ppt from %s' % input_ppt_path+inFile)
 
 # ----------------------------------- main ----------------------------------- #
-report_choice(_change_font_color,_change_outline_color,_change_background_color,_change_fill_color)
+report_choice(_change_font_color,_change_outline_color,_change_background_color,_change_shape_color)
 for slide in prs.slides:
     if _set_single_slile:
         if slide_index == prs.slides.index(slide):
-            set_color(slide,NewThemeColor,_change_font_color,_change_outline_color,_change_background_color,_change_fill_color)
+            set_color(slide,NewThemeColor,_change_font_color,_change_outline_color,_change_background_color,_change_shape_color)
             break
     else:
-        set_color(slide,NewThemeColor,_change_font_color,_change_outline_color,_change_background_color,_change_fill_color)
+        set_color(slide,NewThemeColor,_change_font_color,_change_outline_color,_change_background_color,_change_shape_color)
 
 # --------------------------------- save ppt --------------------------------- #
 print('done! saving ppt to %s' % output_ppt_path+outFile)
