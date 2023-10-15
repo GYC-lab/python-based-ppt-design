@@ -3,6 +3,8 @@ from pptx.oxml.xmlchemy import OxmlElement
 from pptx.util import Cm
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.dml.color import RGBColor
+from utils import *
+from themeColor import *
 
 def SubElement(parent, tagname, **kwargs):
     element = OxmlElement(tagname)
@@ -35,7 +37,12 @@ blueBoxFillColour = blueBoxFill.fore_color
 blueBoxFillColour.rgb = RGBColor(0,176,240)
 
 # Set the transparency of the blue box to 56%
-_set_shape_transparency(blueBox, 44000)
+set_solid_transparency(blueBoxFill, 0.8)
+
+myThemeColor  = myThemeColor_user
+NewThemeColor = set_my_theme_color(myThemeColor)
+set_fill_gradient_color(blueBoxFill,NewThemeColor,2,90)
+
 
 # Save the presentation
-prs.save('motiongo科技1_new.pptx')
+prs.save('./output/motiongo科技1_new.pptx')

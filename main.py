@@ -23,11 +23,11 @@ inFile          = 'motiongo科技1_sub3.pptx' # 科技对商业的影响 - 趋�
 outFile         = 'motiongo科技1_new.pptx'
 
 # --------------------- set theme color at themeColor.py --------------------- #
-myThemeColor  = myThemeColor_black
+myThemeColor  = myThemeColor_user
 NewThemeColor = set_my_theme_color(myThemeColor)
 
 # --------------------------------- load ppt --------------------------------- #
-prs = Presentation(input_ppt_path+inFile)   # 标题页
+prs = Presentation(input_ppt_path+inFile)  
 print('loading ppt from %s' % input_ppt_path+inFile)
 
 # ----------------------------------- main ----------------------------------- #

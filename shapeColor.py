@@ -13,8 +13,8 @@ def change_shape_color(slide,NewThemeColor,_change_shape_color):
 
                 # change SOLID color
                 if fill.type in [MSO_FILL.SOLID]:
-                    # set_fill_solid_color(fill,NewThemeColor)
-                    set_fill_gradient_color(fill,NewThemeColor,2,90)
+                    set_fill_solid_color(fill,NewThemeColor)
+                    # set_fill_gradient_color(fill,NewThemeColor,2,90)
                 # change GRADIENT color
                 # elif fill.type in [MSO_FILL.GRADIENT]:
                 #     set_fill_gradient_color(fill,NewThemeColor,2,90)
@@ -34,8 +34,7 @@ def change_shape_color(slide,NewThemeColor,_change_shape_color):
                     fill = shape.fill
                     # change SOLID color
                     if fill.type in [MSO_FILL.SOLID]:
-                        # set_fill_solid_color(fill,NewThemeColor)
-                        set_fill_gradient_color(fill,NewThemeColor,2,90)
+                        set_fill_solid_color(fill,NewThemeColor)
                     # change GRADIENT color
                     # elif fill.type in [MSO_FILL.GRADIENT]:
                     #     set_fill_gradient_color(fill,NewThemeColor,2,90)

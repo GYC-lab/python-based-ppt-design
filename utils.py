@@ -26,10 +26,22 @@ def hex_to_rgb(hex_color):
     return r, g, b
 
 def SubElement(parent, tagname, **kwargs):
-        element = OxmlElement(tagname)
-        element.attrib.update(kwargs)
-        parent.append(element)
-        return element
+    '''
+    add new element to parent
+    '''
+    element = OxmlElement(tagname)
+    element.attrib.update(kwargs)
+    parent.append(element)
+    return element
+
+def RepElement(parent, tagname, **kwargs):
+    '''
+    replace element of parent
+    '''
+    element = OxmlElement(tagname)
+    element.attrib.update(kwargs)
+    parent._children = [element]
+    return element
 
 def set_my_theme_color(myThemeColor):
     '''
@@ -93,11 +105,20 @@ def set_solid_transparency(fill, alpha):
     """ Set the transparency (alpha) of a solid fill"""
     realAlpha = (100-int(alpha*100))*1000
     ts = fill._xPr
-    with open('xml.xml', 'a') as f:
-        f.write(ts.xml)    
+    # with open('xml.xml', 'a') as f:
+    #     f.write(ts.xml)    
     ts = fill._xPr.solidFill
     sF = ts.get_or_change_to_srgbClr()
     sE = SubElement(sF, 'a:alpha', val=str(realAlpha))
+
+def set_gradient_angle(fill, angle):
+    """ Set the angle of a gradient fill"""
+    ts = fill._xPr
+    ts = fill._xPr.gradFill
+    # print(ts.xml)
+    sF = ts.new_gradFill()
+    sE = SubElement(sF, 'a:lin', ang=str(angle), scaled='1')
+    # print(sF.xml)
 
 def set_gradient_transparency(fill, alpha, stop_i):
     """ Set the transparency (alpha) of a gradient fill"""
@@ -139,12 +160,17 @@ def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=1):
     for i in range(0,num_of_gradient_stops):
         fill.gradient_stops[i].position = i/(num_of_gradient_stops-1)
         set_gradient_transparency(fill, alpha, i)   # set transparency
+    
+    # set gradient angle
+    set_gradient_angle(fill, angle)
+    print("set gradient angle to %d" % angle)
 
-    try:
-        fill.gradient_angle = angle          
-    except:
-        # print("fail to set gradient angle, maybe is not a linear gradient")
-        print("")
+    # try:
+    #     fill.gradient_angle = angle 
+    #     print("set gradient angle to %d" % angle)        
+    # except:
+    #     print("fail to set gradient angle, maybe is not a linear gradient")
+        # print("")
     
 def report_choice(_change_font_color,_change_outline_color,_change_background_color,_change_shape_color):
     '''
