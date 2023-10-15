@@ -1,3 +1,5 @@
+# 着色1#00BCA7  着色2#6BFFB8  着色3#2CEAA3  着色4#AAEFDF  着色5#9EE37D  着色6#63C132
+# 文背深1#00584E 文背浅1#EEFFFD 文背深2#FFFFFF 文背浅1#FDFFFF
 myThemeColor_user = {
     'myACCENT_1': '#00BCA7',
     'myACCENT_2': '#6BFFB8',

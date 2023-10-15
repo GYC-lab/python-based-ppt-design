@@ -25,6 +25,12 @@ def hex_to_rgb(hex_color):
 
     return r, g, b
 
+def SubElement(parent, tagname, **kwargs):
+        element = OxmlElement(tagname)
+        element.attrib.update(kwargs)
+        parent.append(element)
+        return element
+
 def set_my_theme_color(myThemeColor):
     '''
     set user-defined theme color based on myThemeColor
@@ -62,6 +68,16 @@ def change_color(object_color,NewThemeColor):
     else:
         return NewThemeColor['myDARK_1']
     
+def add_new_gradient_stop(fill):
+    '''
+    add new gradient stop to fill
+    '''
+    gsLst = fill.gradient_stops._gsLst
+    new_gs = deepcopy(gsLst[0])
+    gsLst.append(new_gs)
+    new_gradient_stop = fill.gradient_stops[-1]
+    return new_gradient_stop
+    
 def set_color_by_type(object_color,NewThemeColor):
     '''
     set color according to type of object_color
@@ -72,12 +88,6 @@ def set_color_by_type(object_color,NewThemeColor):
         object_color.rgb = change_color(object_color,NewThemeColor)
     else:
         object_color.rgb = NewThemeColor['DEFAULT']     # set Nonecolor type
-
-def SubElement(parent, tagname, **kwargs):
-        element = OxmlElement(tagname)
-        element.attrib.update(kwargs)
-        parent.append(element)
-        return element
 
 def set_solid_transparency(fill, alpha):
     """ Set the transparency (alpha) of a solid fill"""
@@ -103,111 +113,6 @@ def set_fill_solid_color(fill,NewThemeColor,alpha=1):
     set_color_by_type(fill_color,NewThemeColor) # set color
     set_solid_transparency(fill, alpha)         # set transparency
 
-def change_all_font_color(slide,NewThemeColor):
-    '''
-    change all font color of each slide
-    '''
-    
-    # check if title exists and change font color
-    title = slide.shapes.title
-    if title is not None:
-        # print(title.text)
-        title_color = title.text_frame.paragraphs[0].font.color
-        set_color_by_type(title_color,NewThemeColor)
-    
-    # check if subtitle exists and change font color
-    num_of_placeholders = slide.placeholders.__len__()
-    for i in range(1,num_of_placeholders):
-        subtitle = slide.placeholders[i]
-        subtitle_color = subtitle.text_frame.paragraphs[0].font.color
-        set_color_by_type(subtitle_color,NewThemeColor)
-
-    # change font color of each shape
-    for shape in slide.shapes:
-        if shape.has_text_frame:
-            for paragraph in shape.text_frame.paragraphs:
-                for run in paragraph.runs:
-                    font = run.font
-                    font_color = font.color
-                    # print(font_color.type,run.text)
-                    set_color_by_type(font_color,NewThemeColor)
-
-    # only operate on group shapes
-    group_shapes = [
-        shp for shp in slide.shapes
-        if shp.shape_type == MSO_SHAPE_TYPE.GROUP
-    ]
-    for group_shape in group_shapes:
-        for shape in group_shape.shapes:
-            if shape.has_text_frame:
-                for paragraph in shape.text_frame.paragraphs:
-                    for run in paragraph.runs:
-                        font = run.font
-                        font_color = font.color
-                        # print(font_color.type,run.text)
-                        set_color_by_type(font_color,NewThemeColor)
-
-def change_background_color(slide,NewThemeColor,isGradient=False):
-    '''
-    change background color of each slide
-    '''
-    background = slide.background
-    fill       = background.fill
-
-    # if isGradient:
-    #     set_fill_gradient_color(fill,NewThemeColor,2,90)
-    # else:
-    #     set_color_by_type(fill_color,NewThemeColor)
-    if fill.type in [MSO_FILL.SOLID,MSO_FILL.BACKGROUND]:
-        fill.solid()
-        if isGradient:
-            set_fill_gradient_color(fill,NewThemeColor,2,90)
-        else:
-            set_fill_solid_color(fill,NewThemeColor)
-
-def change_fill_color(slide,NewThemeColor,isGradient=False):
-    '''
-    change fill color of each shape (not including picture)
-    '''
-    for shape in slide.shapes:
-        # print(shape.shape_type)
-        # print("---")
-        if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
-            fill = shape.fill
-            # change SOLID color
-            # print(fill.type)
-            if fill.type in [MSO_FILL.SOLID,MSO_FILL.BACKGROUND,MSO_FILL.GRADIENT]:
-                if isGradient:
-                    set_fill_gradient_color(fill,NewThemeColor,2,90)
-                else:
-                    set_fill_solid_color(fill,NewThemeColor)
-        
-    group_shapes = [
-        shp for shp in slide.shapes
-        if shp.shape_type == MSO_SHAPE_TYPE.GROUP
-    ]    
-    
-    for group_shape in group_shapes:
-        for shape in group_shape.shapes:
-            if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
-                fill = shape.fill
-                if fill.type in [MSO_FILL.SOLID,MSO_FILL.BACKGROUND,MSO_FILL.GRADIENT]:
-                    # print(fill.type)
-                    if isGradient:
-                        set_fill_gradient_color(fill,NewThemeColor,2,90)
-                    else:
-                        set_fill_solid_color(fill,NewThemeColor)
-
-def add_new_gradient_stop(fill):
-    '''
-    add new gradient stop to fill
-    '''
-    gsLst = fill.gradient_stops._gsLst
-    new_gs = deepcopy(gsLst[0])
-    gsLst.append(new_gs)
-    new_gradient_stop = fill.gradient_stops[-1]
-    return new_gradient_stop
-
 def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=0.01):
     '''
     fill      : fill object of shape
@@ -230,58 +135,8 @@ def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=0.01):
         fill.gradient_stops[i].position = i/(num_of_gradient_stops-1)
         set_gradient_transparency(fill, alpha, i)   # set transparency
 
-    fill.gradient_angle = angle          
+    try:
+        fill.gradient_angle = angle          
+    except:
+        print("fail to set gradient angle, maybe is not a linear gradient")
     
-
-def change_outline_color(slide,NewThemeColor):
-    '''
-    change outline color of each shape
-    '''
-    for shape in slide.shapes:
-        if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
-            line = shape.line
-            line_color = line.color
-            set_color_by_type(line_color,NewThemeColor)
-
-    group_shapes = [
-        shp for shp in slide.shapes
-        if shp.shape_type == MSO_SHAPE_TYPE.GROUP
-    ]    
-    
-    for group_shape in group_shapes:
-        for shape in group_shape.shapes:
-            if shape.shape_type in [MSO_SHAPE_TYPE.AUTO_SHAPE,MSO_SHAPE_TYPE.FREEFORM]:
-                line = shape.line
-                line_color = line.color
-                set_color_by_type(line_color,NewThemeColor)
-
-def read_outline_color(shape):
-    '''
-    read outline color of shape
-    '''
-    line_fill = shape.line.fill
-    print("fill-type == %s" % line_fill.type)
-    if line_fill.type != MSO_FILL.SOLID:
-        return
-
-    line_color = line_fill.fore_color
-    print("color-type == %s" % line_color.type)
-    if line_color.type == MSO_COLOR_TYPE.SCHEME:
-        print("color == %s" % line_color.theme_color)
-    elif line_color.type == MSO_COLOR_TYPE.RGB:
-        print("color == %s" % line_color.rgb)
-    else:
-        print("No line color")
-
-def read_font_color(font):
-    '''
-    read font color of font
-    '''
-    font_color = font.color
-    print("color-type == %s" % font_color.type)
-    if font_color.type == MSO_COLOR_TYPE.SCHEME:
-        print("color == %s" % font_color.theme_color)
-    elif font_color.type == MSO_COLOR_TYPE.RGB:
-        print("color == %s" % font_color.rgb)
-    else:
-        print("No font color")                
