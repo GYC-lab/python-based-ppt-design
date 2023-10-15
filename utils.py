@@ -106,6 +106,8 @@ def set_color_by_type1(object_color,NewThemeColor):
     # not theme color
     else:
         object_color.rgb = NewThemeColor['DEFAULT1']  # set black color for font  
+        
+    object_color.rgb = NewThemeColor['DEFAULT1']  # set black color for font  
 
 def set_color_by_type2(object_color,NewThemeColor):
     '''

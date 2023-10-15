@@ -25,8 +25,8 @@ def change_shape_color(slide,NewThemeColor,
                     # _transparency = 1
                     set_fill_solid_color(fill,NewThemeColor,_transparency)   
                 # set Nonecolor type to transparent
-                else:
-                    set_fill_solid_color(fill,NewThemeColor,_transparency)
+                # else:
+                #     set_fill_solid_color(fill,NewThemeColor,_transparency)
 
         group_shapes = [
             shp for shp in slide.shapes
@@ -49,7 +49,7 @@ def change_shape_color(slide,NewThemeColor,
                     elif fill.type in [MSO_FILL.BACKGROUND]:
                         set_fill_solid_color(fill,NewThemeColor,_transparency)
                     # set Nonecolor type to transparent
-                    else:
-                        set_fill_solid_color(fill,NewThemeColor,_transparency)                        
+                    # else:
+                    #     set_fill_solid_color(fill,NewThemeColor,_transparency)                        
     else:
         pass

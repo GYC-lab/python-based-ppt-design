@@ -24,8 +24,8 @@ def change_background_color(slide,NewThemeColor,
         elif fill.type == MSO_FILL.BACKGROUND:
             set_background_solid_color(fill,NewThemeColor,_transparency)
         # set Nonecolor type to transparent
-        else:
-            set_fill_solid_color(fill,NewThemeColor,_transparency)
+        # else:
+        #     set_fill_solid_color(fill,NewThemeColor,_transparency)
 
         
     else:

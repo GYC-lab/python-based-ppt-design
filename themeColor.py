@@ -13,7 +13,7 @@ myThemeColor_user = {
     'myLIGHT_2' : '#FDFFFF',
     'DEFAULT1'  : '#FFFFFF',
     'DEFAULT2'  : '#00584E',
-    'DEFAULT3'  : '#9654c7',
+    'DEFAULT3'  : '#00584E',
 }
 
 myThemeColor_white = {
