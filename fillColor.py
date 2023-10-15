@@ -11,11 +11,13 @@ def change_fill_color(slide,NewThemeColor,_change_fill_color):
 
                 # change SOLID color
                 if fill.type in [MSO_FILL.SOLID]:
-                    set_fill_solid_color(fill,NewThemeColor)
-                # change GRADIENT color
-                elif fill.type in [MSO_FILL.GRADIENT]:
+                    # set_fill_solid_color(fill,NewThemeColor)
                     set_fill_gradient_color(fill,NewThemeColor,2,90)
+                # change GRADIENT color
+                # elif fill.type in [MSO_FILL.GRADIENT]:
+                #     set_fill_gradient_color(fill,NewThemeColor,2,90)
                 # set_fill_gradient_color(fill,NewThemeColor,2,90)
+                # set_fill_solid_color(fill,NewThemeColor)
             
         group_shapes = [
             shp for shp in slide.shapes
@@ -29,9 +31,11 @@ def change_fill_color(slide,NewThemeColor,_change_fill_color):
                     # change SOLID color
                     if fill.type in [MSO_FILL.SOLID]:
                         set_fill_solid_color(fill,NewThemeColor)
-                    # change GRADIENT color
-                    elif fill.type in [MSO_FILL.GRADIENT]:
                         set_fill_gradient_color(fill,NewThemeColor,2,90)
+                    # change GRADIENT color
+                    # elif fill.type in [MSO_FILL.GRADIENT]:
+                    #     set_fill_gradient_color(fill,NewThemeColor,2,90)
                     # set_fill_gradient_color(fill,NewThemeColor,2,90)
+                    # set_fill_solid_color(fill,NewThemeColor)
     else:
         pass

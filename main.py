@@ -14,11 +14,11 @@ slide_index              = 0 # index of slide to be set (if set_single_slile=1)
 # --------------------------------- filepath --------------------------------- #
 input_ppt_path  = './input/'
 output_ppt_path = './output/'
-inFile          = 'motiongo科技1.pptx'      # 全部
 inFile          = 'motiongo科技1_sub1.pptx' # 目录页
 inFile          = 'motiongo科技1_sub2.pptx' # 科技对商业的影响 - 背景介绍
 inFile          = 'motiongo科技1_sub4.pptx' # 科技发展现状大纲
 inFile          = 'motiongo科技1_sub5.pptx' # 标题页
+inFile          = 'motiongo科技1.pptx'      # 全部
 inFile          = 'motiongo科技1_sub3.pptx' # 科技对商业的影响 - 趋势分析
 outFile         = 'motiongo科技1_new.pptx'
 

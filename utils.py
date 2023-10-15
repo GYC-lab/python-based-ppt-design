@@ -140,10 +140,11 @@ def set_fill_gradient_color(fill,NewThemeColor,num_colors,angle,alpha=1):
         fill.gradient_stops[i].position = i/(num_of_gradient_stops-1)
         set_gradient_transparency(fill, alpha, i)   # set transparency
 
-    try:
-        fill.gradient_angle = angle          
-    except:
-        print("fail to set gradient angle, maybe is not a linear gradient")
+    # try:
+    #     fill.gradient_angle = angle          
+    # except:
+    #     # print("fail to set gradient angle, maybe is not a linear gradient")
+    #     print("")
     
 def report_choice(_change_font_color,_change_outline_color,_change_background_color,_change_fill_color):
     '''

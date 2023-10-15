@@ -16,7 +16,7 @@
 pip install -r requirement.txt
 ```
 
-此外，代码文件中的函数下方均有注释。
+此外，代码文件中的函数下方均有注释，具体使用方法可参考注释。
 
 # 基本功能
 
@@ -28,6 +28,6 @@ pip install -r requirement.txt
 # 使用说明
 
 1. 将需要修改的ppt文件放在`input`文件夹下；
-2. 运行`main.py`：`main.py`中的`main`函数中的`myThemeColor`参数为主题颜色，具体在`themeColor.py`文件中设置，可根据需要自行修改。若要关闭某个功能，可将其注释掉；
+2. 运行`main.py`：`main.py`中的`main`函数中的`myThemeColor`参数为主题颜色，具体在`themeColor.py`文件中设置，可根据需要自行修改。若要关闭某个功能，可在settings中将其设置为`0`；
 3. 修改后的ppt文件将会保存在`output`文件夹下。
 
