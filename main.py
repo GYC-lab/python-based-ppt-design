@@ -9,7 +9,7 @@ _change_outline_color    = 0 # 1: change outline color; 0: not change outline co
 _change_background_color = 1 # 1: change background color; 0: not change background color
 _change_shape_color      = 1 # 1: change shape color; 0: not change fill color
 _gradient_angle          = 0 # angle of gradient, 90: vertical; 0: horizontal
-_transparency            = 0  # transparency of fill color, 0: not transparent; 1: transparent
+_transparency            = 0 # transparency of fill color, 0: not transparent; 1: transparent
 _set_single_slile        = 0 # 1: only set one slide; 0: set all slides
 slide_index              = 0 # index of slide to be set (if set_single_slile=1)
 
